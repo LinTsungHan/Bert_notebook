@@ -1,4 +1,4 @@
-# Bert_notebook
+# Bert_Elmo_Gpt2_notebook
 #[ELMO] Embeddings from Language Model#-   Red<br />
 RNN base:蒐集一對句子,不用標註,可以訓練出!<br />
 RNN去預測下一個token<br />
