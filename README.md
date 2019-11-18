@@ -23,25 +23,30 @@ BERT的裡面不是RNN而是transformer Encoder<br />
 1. 給一個句子進去,每個句子都會吐一個embedding出來 再 給Linear<br />
 
 BERT用字當單位比用詞當單位好<br />
+
 2. 給兩個句子,是要被接再一起的<br />
 中間給個boundary [SEP]<br />
 前面放一個特殊token[CLS]<br />
 
 如何使用BERT<br />
+
 1. input句子 output CLS:<br />
 要分類句子丟給BERT<br />
 開頭標好CLS, 丟給 Linear <br />
  (小BERT 24層;大的48層)<br />
 BERT跟LinearCLS同時訓練<br />
 <br />
+
 2. input 句子 output每個詞回是屬於哪一個cls<br />
 進去句子的每個詞彙都會有一個embeddings<br />
 丟給每個LinearCLS來去決定是屬於哪個cls<br />
 <br />
+
 3. input兩個句子output一個cls<br />
 根據前提,這是對還是錯!<br />
 給兩個句子,句子之間加入[SEP],開頭給[CLS]輸出embedding到Linear Cls決定是T/F<br />
 <br />
+
 4. 解決 E.g.SQuAD  Extraction-based Question Answering(QA)<br />
 讀一篇文章,問一個問題希望可以答對正確答案<br />
 (文章裡面必須要有答案)<br />
